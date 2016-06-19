@@ -1,8 +1,8 @@
 #!/bin/sh -e
 # Diese Parameter muessen angepasst werden
-KONZENTRATOR_NAME=${KONZENTRATOR_NAME:-fichtenbackbone-1}
-KONZENTRATOR_IPV6_NET=${KONZENTRATOR_IPV6_NET:-2a03:2260:120:300::/56}
-FFRL_IFS=${FFRL_IFS:-"tun-ffrl-dus-a tun-ffrl-dus-b tun-ffrl-ber-a tun-ffrl-ber-b"}
+KONZENTRATOR_NAME=${KONZENTRATOR_NAME:-xyzbackbone-1}
+KONZENTRATOR_IPV6_NET=${KONZENTRATOR_IPV6_NET:-2a03:2260:xxxx:xxxx::/56}
+FFRL_IFS=${FFRL_IFS:-"tun-ffrl-dus-a tun-ffrl-dus-b tun-ffrl-ber-a tun-ffrl-ber-b tun-ffrl-fra-a tun-ffrl-fra-b"}
 
 #DBG=echo
 
@@ -10,7 +10,7 @@ FFRL_IFS=${FFRL_IFS:-"tun-ffrl-dus-a tun-ffrl-dus-b tun-ffrl-ber-a tun-ffrl-ber-
 ## Ab hier muss nichts mehr angepasst werden
 ##
 
-BASE=/opt/eulenfunk/konzentrator
+BASE=/opt/eulenfunk/konzentrator/konzentrator
 
 ${DBG} logger -t bpg-konz-rc "Start: BPG Konzentrator ${KONZENTRATOR_NAME} Setup"
 # Alles was von iptables markiert wurde (siehe ferm.conf) landet in table 42
