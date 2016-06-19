@@ -33,5 +33,12 @@ for i in ${BASE}/config/*; do
 	fi
 done
 
+
+${DBG} logger -t bgp-konz-rc "Loading conntrack module and call sysctl"
+${DBG} modprobe nf_conntrack
+${DBG} modprobe nf_conntrack_ipv4
+${DBG} modprobe nf_conntrack_ipv6
+${DBG} sysctl --system
+
 ${DBG} logger -t bpg-konz-rc "Ende: BPG Konzentrator ${KONZENTRATOR_NAME} Setup"
 exit 0
